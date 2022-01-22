@@ -99,6 +99,16 @@ class orderController extends Controller
     public function edit(order $order)
     {
         //
+        $companies = company::all();
+        $supplier = supplier::all();
+        $shipper = shipper::all();
+        $broker = broker::all();
+        return view('orders.edit', [
+            'companies' => $companies,
+            'supplier' => $supplier,
+            'shipper' => $shipper,
+            'broker' => $broker
+        ]);
     }
 
     /**
